@@ -1,0 +1,27 @@
+html{
+    height: 100%;
+}
+body{
+    background-image: url("/images/mainbg.jpg");
+    height: 100%;
+}
+main{
+    background-image: url("/images/mainbg-container.jpg");
+    height: 100%;
+}
+
+
+form textarea{
+    min-height: 250px;
+}
+
+.message-ui-frame {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.text-muted{
+    color: #00949e !important;
+}
