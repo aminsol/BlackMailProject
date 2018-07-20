@@ -7,7 +7,7 @@
  */
 
 $db = new mysqli();
-$db->connect('frontendclass.cj62nnh71j8u.ap-northeast-1.rds.amazonaws.com', 'amin', 'Ilovesoda', 'frontendclass');
+$db->connect('frontendclass.c8qoctggzy3e.us-east-1.rds.amazonaws.com', 'amin', 'Ilovesoda', 'frontendclass');
 
 if ($db->connect_error) {
     exit($db->connect_error);
