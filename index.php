@@ -16,50 +16,31 @@ require_once "config.php";
     <title>Hello, world!</title>
 </head>
 <body>
-<main class="container">
-    <div class="align-middle message-ui-frame col-12">
-        <h1 class="text-center">Message Your Victim</h1>
-        <?php
-        /*
-        if ($result = $db->query("select * from users")) {
-            var_dump($result->fetch_row());
-        }
-        else{
-            echo $db->error;
-        }
-        */
-        ?>
-        <form id="message-form" class="col-12">
-            <div class="form-group">
-                <label for="email-subject">Subject</label>
-                <input type="text" class="form-control" id="email-subject" aria-describedby="emailHelp"
-                       placeholder="Write a virtuous subject">
-                <small id="subjectHelp" class="form-text text-muted">Help them to trust you.</small>
-            </div>
-            <div class="form-group">
-                <label for="email-address">Email</label>
-                <input type="email" class="form-control" id="email-subject" aria-describedby="emailHelp"
-                       placeholder="Type Their email address">
-                <small id="subjectHelp" class="form-text text-muted">Give us email of that poor guy!</small>
-            </div>
-            <div class="form-group">
-                <label for="email-attachment" class="d-block">Upload all the dirty stuff</label>
-                <label for="email-attachment">
-                    <span class="btn btn-success">Upload Your Image</span>
-                </label>
-                <input id="email-attachment" name="email-attachment" type="file" class="d-none">
-            </div>
-            <div class="form-group">
-                <label for="email-body">Your innocent message:</label>
-                <textarea class="form-control" form="message-form" name="message" id="email-body"
-                          placeholder=" Delight them with a lighting heart attack"></textarea>
-                <small id="subjectHelp" class="form-text text-muted">Describe the mess that they are in!</small>
-            </div>
-            <button class="btn btn-danger" type="reset"> Reset </button>
-            <button class="btn btn-primary" type="submit"> Send </button>
-        </form>
-    </div>
-</main>
+  <main class="container">
+      <div class="align-middle message-ui-frame col-12">
+          <h1 class="text-center">Please respond to your message:</h1>
+              <div class="md_subject">
+                  <h3><label for="email-subject">Subject:</label></h3>
+                  <p name="from" rows="8" cols="80">This is the Subject</p>
+              </div>
+              <div class="md_email">
+                  <h3><label for="email-address">Email</label></h3>
+                  <p name="from" rows="8" cols="80">From: personThatThisIsFrom@gmail.com</p>
+              </div>
+              <div class="md_message">
+                  <h3><label for="email-body">Message:</label></h3>
+                  <p name="name" rows="8" cols="80"> The message is going to be placed here. Look at all of the blackmail that is being typed here.</p>
+              </div>
+              <div class="md_image_container">
+                <div class="md_image_frame">
+                    <h3><label for="email-attachment" class="d-block">This is the picture that was uploaded</label></h3>
+                    <img class="md_image" src="images/mainbg.jpg" alt="">
+                </div>
+              </div>
+              <button class="btn btn-danger" type="reset"> Delete and Share Image </button>
+              <button class="btn btn-primary" type="submit"> Accept and Pay </button>
+      </div>
+  </main>
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
