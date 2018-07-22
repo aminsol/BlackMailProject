@@ -51,9 +51,10 @@ require_once "config.php";
                                 <td class="checkbox">
                                     <input type="checkbox" class="mail-mini-box" title="">
                                 </td>
-                                <td class="inbox-message"><?php echo $row['receiver'] ?></td>
-                                <td class="inbox-message"><?php echo $row['subject'] ?></td>
+                                <td class="inbox-message text-left" ><?php echo $row['sender'] ?></td>
+                                <td class="inbox-message text-left"><?php echo $row['subject'] ?></td>
                                 <td class="inbox-message text-left"> <?php echo $row['message'] ?></td>
+                                <td class="inbox-message text-left"><?php echo $row['amount']?></td>
                             </tr>
                             <?php
                         }
