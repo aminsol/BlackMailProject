@@ -44,7 +44,6 @@ require_once "config.php";
             <div class="inbox-body">
                 <table class="table table-hover">
 
-
                     <tr class="message-rows">
                         <td class="checkbox">
                             <input type="checkbox" class="mail-mini-box" title="">
@@ -55,7 +54,7 @@ require_once "config.php";
                     </tr>
 
 
-                    </tbody>
+
                 </table>
             </div>
         </aside>
