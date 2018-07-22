@@ -2,6 +2,6 @@
 
 
 # Team Members
-Amin Soltani
-Chris Meneses
-Kader Ustun
+* Amin Soltani
+* Chris Meneses
+* Kader Ustun
