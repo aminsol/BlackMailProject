@@ -1,6 +1,6 @@
 <?php
 require_once "config.php";
-?>s
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,20 +23,18 @@ require_once "config.php";
                 <h5><a href ="#">Danny's BLACKMAIL</a></h5>
             </div>
 
-            <div class="compose-body">
-                <!-- link compose to Amin page -->
-                <a class="btn btn-compose" title="Compose">Compose</a>
+            <div class="compose-body col-sm-12">
+                <a class="btn btn-compose btn-danger col-sm-12" title="Compose" href="index.php">Compose</a>
             </div>
-            <ul class="other-buttons">
-                <li class="active"><a href="#"><!-- link to the right-->
-                        Inbox<label class="label-danger pull-right">
-                        </label></a>
-                </li>
-                <li><a href="#">Sent Mail</a></li>
-                <li><a href="#">Important</a></li>
-                <li><a href="#">Drafts</a></li>
-                <li><a href="#">Trash</a></li>
-            </ul>
+            <div class= "col-sm-12">
+                <ul class="other-buttons">
+                    <li><a href="inbox.php" class="btn btn-primary col-sm-9">Inbox</a></li>
+                    <li><a href="outbox.php">Outbox</a></li>
+                    <li><a href="#">Important</a></li>
+                    <li><a href="#">Drafts</a></li>
+                    <li><a href="#">Trash</a></li>
+                </ul>
+            </div>
         </aside>
         <aside class="right-row">
             <div class="top-column">
@@ -46,15 +44,15 @@ require_once "config.php";
                 <table class="table table-hover">
                     <?php
 
-                    if ($result = $db->query("select * from messages")) {
+                    if ($result = $db->query("select * from messages ")) {
                         while($row=$result->fetch_assoc()){?>
                             <tr class="message-rows">
                                 <td class="checkbox">
                                     <input type="checkbox" class="mail-mini-box" title="">
                                 </td>
+                                <td class="inbox-message" ><?php echo $row['sender'] ?></td>
                                 <td class="inbox-message"><?php echo $row['subject'] ?></td>
                                 <td class="inbox-message text-left"> <?php echo $row['message'] ?></td>
-                                <td class="inbox-message text-right">2 months ago</td>
                     </tr>
                     <?php
                         }
@@ -64,12 +62,6 @@ require_once "config.php";
                     }
 
                     ?>
-                    <tbody>
-
-
-
-
-                    </tbody>
                 </table>
             </div>
         </aside>

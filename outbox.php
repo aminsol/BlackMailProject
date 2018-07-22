@@ -15,27 +15,27 @@ require_once "config.php";
     <title>Danny's Blackmail</title>
 </head>
 <body>
-<main class="container">
-    <div class="inbox-ui-frame">
+<main class="container col-12">
+    <div class="inbox-ui-frame col-12">
         <aside class="left-row">
             <div class="inbox-Logo">
                 <h5><a href ="#">Danny's BLACKMAIL</a></h5>
             </div>
 
-            <div class="compose-body">
+            <div class="compose-body col-9">
                 <!-- link compose to Amin page -->
-                <a class="btn btn-compose" title="Compose">Compose</a>
+                <a class="btn btn-compose btn-danger" title="Compose" href="index.php">Compose</a>
             </div>
-            <ul class="other-buttons">
-                <li class="active"><a href="#"><!-- link to the right-->
-                        Inbox<label class="label-danger pull-right">
-                        </label></a>
-                </li>
-                <li><a href="#">Sent Mail</a></li>
-                <li><a href="#">Important</a></li>
-                <li><a href="#">Drafts</a></li>
-                <li><a href="#">Trash</a></li>
-            </ul>
+            <div class= "col-sm-12">
+                <ul class="other-buttons">
+                    <li><a href="inbox.php" class="btn-link">Inbox</a></li>
+                    <li><a href="outbox.php" class="btn btn-primary col-sm-9">Outbox</a></li>
+                    <li><a href="#">Important</a></li>
+                    <li><a href="#">Drafts</a></li>
+                    <li><a href="#">Trash</a></li>
+                </ul>
+            </div>
+
         </aside>
         <aside class="right-row">
             <div class="top-column">
@@ -43,18 +43,26 @@ require_once "config.php";
             </div>
             <div class="inbox-body">
                 <table class="table table-hover">
+                    <?php
 
-                    <tr class="message-rows">
-                        <td class="checkbox">
-                            <input type="checkbox" class="mail-mini-box" title="">
-                        </td>
-                        <td class="inbox-message">HELLO</td>
-                        <td class="inbox-message text-left">From other world.</td>
-                        <td class="inbox-message text-right">2 months ago</td>
-                    </tr>
+                    if ($result = $db->query("select * from messages")) {
+                        while($row=$result->fetch_assoc()){?>
+                            <tr class="message-rows">
+                                <td class="checkbox">
+                                    <input type="checkbox" class="mail-mini-box" title="">
+                                </td>
+                                <td class="inbox-message"><?php echo $row['receiver'] ?></td>
+                                <td class="inbox-message"><?php echo $row['subject'] ?></td>
+                                <td class="inbox-message text-left"> <?php echo $row['message'] ?></td>
+                            </tr>
+                            <?php
+                        }
+                    }
+                    else{
+                        echo $db->error;
+                    }
 
-
-
+                    ?>
                 </table>
             </div>
         </aside>
