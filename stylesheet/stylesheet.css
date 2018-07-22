@@ -2,6 +2,7 @@ html{
     height: 100%;
 }
 body{
+
     background-image: url("/images/mainbg.jpg");
     height: 100%;
 }
@@ -13,6 +14,42 @@ main{
 
 form textarea{
     min-height: 250px;
+}
+.md_subject{
+  justify-content: center;
+}
+
+.md_email{
+  justify-content: center;
+}
+
+.md_image{
+  align-items: center;
+  display: flex;
+  height: auto;
+  object-fit: contain;
+  width: 50%;
+}
+
+.md_image_container{
+  align-items: center;
+  display: block;
+  flex: 0 1 auto;
+  height: auto;
+  justify-content: center;
+  object-fit: contain;
+  width: 100px;
+}
+.md_image_frame{
+  height: auto;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  width: 50;
+}
+
+.md_message{
+  justify-content: center;
 }
 
 .message-ui-frame {
