@@ -2,72 +2,89 @@
 require_once "config.php";
 ?>
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Danny's Blackmail</title>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="stylesheet/bootstrap.min.css">
-    <link rel="stylesheet" href="stylesheet/stylesheet.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="stylesheet/bootstrap.min.css">
+  <link rel="stylesheet" href="stylesheet/stylesheet.css">
 
-    <title>Hello, world!</title>
 </head>
-<body>
-<main class="container">
-    <div class="align-middle message-ui-frame col-12">
-        <h1 class="text-center">Message Your Victim</h1>
-        <?php
-        /*
-        if ($result = $db->query("select * from users")) {
-            var_dump($result->fetch_row());
-        }
-        else{
-            echo $db->error;
-        }
-        */
-        ?>
-        <form id="message-form" class="col-12">
-            <div class="form-group">
-                <label for="email-subject">Subject</label>
-                <input type="text" class="form-control" id="email-subject" aria-describedby="emailHelp"
-                       placeholder="Write a virtuous subject">
-                <small id="subjectHelp" class="form-text text-muted">Help them to trust you.</small>
+  <body>
+    <h1>Danny's Blackmail</h1>
+  <div  class="container">
+  <div class="login-form">
+      <form action="controller/loginbackend.php" method="post">
+          <div class="form-group">
+            <label for="inputEmail">Email</label>
+            <input type="email" class="form-control" name="email" placeholder="email@domain.com" required>
+          </div>
+          <div class="form-group">
+            <label for="inputPassword">Password</label>
+            <input type="password" class="form-control" name="password" placeholder="Password" required>
+          </div>
+
+          <button type="submit" class="btn btn-primary" name="logIn">Login</button>
+          <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#signUp">
+            Sign Up</button>
+
+            <?php if ($_SESSION['notify'] == 'error') { ?>
+                  <div class="alert alert-danger">
+                      <span><?= $_SESSION['message'] ?></span>
+                  </div>
+                  <?php
+              } elseif ($_SESSION['notify'] == 'success') {
+                  ?>
+                  <div class="alert alert-success">
+                      <span><?= $_SESSION['message'] ?></span>
+                  </div>
+                  <?php
+              }
+              $_SESSION['notify'] = null;
+              ?>
+
+          <div class="modal fade" id="signUp" tabindex="-1" role="dialog" aria-labelledby="signUpLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title" id="signUpLabel">Sign Up</h1>
+                </div>
+                <div class="modal-body">
+                  <form role="form" action="controller/login.php" method="post">
+                      <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" class="form-control" id="first_name" placeholder="John">
+                      </div>
+                      <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" class="form-control" id="last_name" placeholder="Doe">
+                      </div>
+                      <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="text" class="form-control" id="newEmail" placeholder="email@domain.com">
+                      </div>
+                      <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="text" class="form-control" id="pword" placeholder="Enter password">
+                      </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                  <button type="button" class="btn btn-primary">Register</button>
+                </div>
+              </div>
             </div>
-            <div class="form-group">
-                <label for="email-address">Email</label>
-                <input type="email" class="form-control" id="email-subject" aria-describedby="emailHelp"
-                       placeholder="Type Their email address">
-                <small id="subjectHelp" class="form-text text-muted">Give us email of that poor guy!</small>
-            </div>
-            <div class="form-group">
-                <label for="email-attachment" class="d-block">Upload all the dirty stuff</label>
-                <label for="email-attachment">
-                    <span class="btn btn-success">Upload Your Image</span>
-                </label>
-                <input id="email-attachment" name="email-attachment" type="file" class="d-none">
-            </div>
-            <div class="form-group">
-                <label for="email-body">Your innocent message:</label>
-                <textarea class="form-control" form="message-form" name="message" id="email-body"
-                          placeholder=" Delight them with a lighting heart attack"></textarea>
-                <small id="subjectHelp" class="form-text text-muted">Describe the mess that they are in!</small>
-            </div>
-            <button class="btn btn-danger" type="reset"> Reset </button>
-            <button class="btn btn-primary" type="submit"> Send </button>
-        </form>
+          </div>
+      </form>
     </div>
-</main>
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-<script src="/js/bootstrap.min.js"></script>
-</body>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  </body>
 </html>
