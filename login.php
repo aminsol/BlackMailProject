@@ -18,7 +18,21 @@ require_once "config.php";
     <h1>Danny's Blackmail</h1>
   <div  class="container">
   <div class="login-form">
-      <form action="controller/loginbackend.php" method="post">
+      <form action="controller/login.php" method="post">
+          <?php if ($_SESSION['notify'] == 'error') { ?>
+              <div class="alert alert-danger">
+                  <span><?= $_SESSION['message'] ?></span>
+              </div>
+              <?php
+          } elseif ($_SESSION['notify'] == 'success') {
+              ?>
+              <div class="alert alert-success">
+                  <span><?= $_SESSION['message'] ?></span>
+              </div>
+              <?php
+          }
+          $_SESSION['notify'] = null;
+          ?>
           <div class="form-group">
             <label for="inputEmail">Email</label>
             <input type="email" class="form-control" name="email" placeholder="email@domain.com" required>
@@ -31,22 +45,6 @@ require_once "config.php";
           <button type="submit" class="btn btn-primary" name="logIn">Login</button>
           <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#signUp">
             Sign Up</button>
-
-            <?php if ($_SESSION['notify'] == 'error') { ?>
-                  <div class="alert alert-danger">
-                      <span><?= $_SESSION['message'] ?></span>
-                  </div>
-                  <?php
-              } elseif ($_SESSION['notify'] == 'success') {
-                  ?>
-                  <div class="alert alert-success">
-                      <span><?= $_SESSION['message'] ?></span>
-                  </div>
-                  <?php
-              }
-              $_SESSION['notify'] = null;
-              ?>
-
           <div class="modal fade" id="signUp" tabindex="-1" role="dialog" aria-labelledby="signUpLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">

@@ -1,5 +1,5 @@
 <?php
-require_once "config.php";
+require_once "../config.php";
 
 $username = $_POST['email'];
 $password = $_POST['password'];
@@ -24,5 +24,6 @@ else {
   $_SESSION['message'] = "email does not exist";
   $_SESSION['notify'] = "error";
 
-  header('Location: login.php');
+  header('Location: ../login.php');
+  exit;
 }
