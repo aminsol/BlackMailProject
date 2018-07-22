@@ -1,7 +1,6 @@
 <?php
 require_once "config.php";
 ?>
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -13,7 +12,7 @@ require_once "config.php";
     <link rel="stylesheet" href="stylesheet/bootstrap.min.css">
     <link rel="stylesheet" href="stylesheet/stylesheet.css">
 
-    <title>Hello, world!</title>
+    <title>Compose a new message!</title>
 </head>
 <body>
 <main class="container">
@@ -29,25 +28,47 @@ require_once "config.php";
         }
         */
         ?>
-        <form id="message-form" class="col-12">
+        <form id="message-form" method="post" action="controller/messages.php" enctype="multipart/form-data"
+              class="col-12">
+            <input type="hidden" name="createMessage" value="1">
+            <?php if ($_SESSION['notify'] == 'error') { ?>
+                <div class="alert alert-danger">
+                    <span><?= $_SESSION['message'] ?></span>
+                </div>
+                <?php
+            } elseif ($_SESSION['notify'] == 'success') {
+                ?>
+                <div class="alert alert-success">
+                    <span><?= $_SESSION['message'] ?></span>
+                </div>
+                <?php
+            }
+            $_SESSION['notify'] = null;
+            ?>
             <div class="form-group">
                 <label for="email-subject">Subject</label>
-                <input type="text" class="form-control" id="email-subject" aria-describedby="emailHelp"
+                <input type="text" name="subject" class="form-control" id="email-subject"
                        placeholder="Write a virtuous subject">
                 <small id="subjectHelp" class="form-text text-muted">Help them to trust you.</small>
             </div>
             <div class="form-group">
                 <label for="email-address">Email</label>
-                <input type="email" class="form-control" id="email-subject" aria-describedby="emailHelp"
+                <input type="email" name="receiver" class="form-control" id="email-subject"
                        placeholder="Type Their email address">
                 <small id="subjectHelp" class="form-text text-muted">Give us email of that poor guy!</small>
+            </div>
+            <div class="form-group">
+                <label for="email-address">Extortion</label>
+                <input type="number" name="amount" class="form-control" id="email-amount"
+                       placeholder="$$$">
+                <small id="subjectHelp" class="form-text text-muted">How much you want form them!</small>
             </div>
             <div class="form-group">
                 <label for="email-attachment" class="d-block">Upload all the dirty stuff</label>
                 <label for="email-attachment">
                     <span class="btn btn-success">Upload Your Image</span>
                 </label>
-                <input id="email-attachment" name="email-attachment" type="file" class="d-none">
+                <input id="email-attachment" name="attachment" type="file" class="d-none">
             </div>
             <div class="form-group">
                 <label for="email-body">Your innocent message:</label>
@@ -55,8 +76,8 @@ require_once "config.php";
                           placeholder=" Delight them with a lighting heart attack"></textarea>
                 <small id="subjectHelp" class="form-text text-muted">Describe the mess that they are in!</small>
             </div>
-            <button class="btn btn-danger" type="reset"> Reset </button>
-            <button class="btn btn-primary" type="submit"> Send </button>
+            <button class="btn btn-danger" type="reset"> Reset</button>
+            <button class="btn btn-primary" type="submit"> Send</button>
         </form>
     </div>
 </main>
