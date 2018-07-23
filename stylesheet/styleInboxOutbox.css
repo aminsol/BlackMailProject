@@ -96,9 +96,10 @@ ul .other-buttons li a{
     color: #41cac0;
 }
 .table{
-    border: 1px solid #d3d3d3;
+    border-collapse: collapse;
     margin-bottom: 0;
 }
+
 .table tr td{
     padding: 12px;
 }

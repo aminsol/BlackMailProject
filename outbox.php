@@ -46,7 +46,7 @@ require_once "config.php";
                 <table class="table table-hover">
                     <?php
 
-                    if ($result = $db->query("select * from messages")) {
+                    if ($result = $db->query("select * from messages join users u on messages.sender = u.email")) {
                         while($row=$result->fetch_assoc()){?>
                             <tr class="message-rows">
                                 <td class="checkbox">
@@ -56,6 +56,7 @@ require_once "config.php";
                                 <td class="inbox-message text-left"><?php echo $row['subject'] ?></td>
                                 <td class="inbox-message text-left"> <?php echo $row['message'] ?></td>
                                 <td class="inbox-message text-left"><?php echo $row['amount']?></td>
+                                <td><a href="message-detail.php>"</a>View more</td>
                             </tr>
                             <?php
                         }
