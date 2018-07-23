@@ -4,7 +4,7 @@ html{
 body{
     font-family: Arial Helvetica, sans-serif;
     font-size: 14px;
-
+    background-image: url("../images/mainbg.jpg");
     height: 100%;
 
 
@@ -30,7 +30,7 @@ body{
     padding: auto;
     vertical-align: top;
     float: none;
-    background-color:  #e5e8ef;
+    background-image: url("../images/mainbg.jpg");
     width: 25%;
 }
 

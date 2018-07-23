@@ -22,9 +22,9 @@ require_once "config.php";
                 <h5><a href ="#">Danny's BLACKMAIL</a></h5>
             </div>
 
-            <div class="compose-body col-9">
+            <div class="compose-body col-sm-12">
                 <!-- link compose to Amin page -->
-                <a class="btn btn-compose btn-danger" title="Compose" href="index.php">Compose</a>
+                <a class="btn btn-compose btn-danger col-sm-12" title="Compose" href="index.php">Compose</a>
             </div>
             <div class= "col-sm-12">
                 <ul class="other-buttons">
@@ -37,6 +37,7 @@ require_once "config.php";
             </div>
 
         </aside>
+
         <aside class="right-row">
             <div class="top-column">
                 <h3>Outbox</h3>
