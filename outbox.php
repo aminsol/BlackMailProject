@@ -49,14 +49,12 @@ require_once "config.php";
                     if ($result = $db->query("select * from messages join users u on messages.sender = u.email")) {
                         while($row=$result->fetch_assoc()){?>
                             <tr class="message-rows">
-                                <td class="checkbox">
-                                    <input type="checkbox" class="mail-mini-box" title="">
-                                </td>
+
                                 <td class="inbox-message text-left" ><?php echo $row['sender'] ?></td>
                                 <td class="inbox-message text-left"><?php echo $row['subject'] ?></td>
                                 <td class="inbox-message text-left"> <?php echo $row['message'] ?></td>
                                 <td class="inbox-message text-left"><?php echo $row['amount']?></td>
-                                <td><a href="message-detail.php>"</a>View more</td>
+                                <td><a class="btn" role="button" href="../message-detail.php"</a>View more</td>
                             </tr>
                             <?php
                         }
