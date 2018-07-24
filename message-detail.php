@@ -30,30 +30,24 @@ $query->fetch();
         <h5><a href="#">Danny's <br>BLACKMAIL</a></h5>
     </div>
 </header>
-<!-- Side Bar -->
 <aside class="float-left col-2">
     <div class="align-center message-ui-frame col-12">
-        <div class="compose-body col-10">
-            <a class="btn btn-compose btn-danger col-10" title="Compose" href="index.php">Compose</a>
-        </div>
-        <div class="compose-body col-10">
-            <a class="btn btn-compose btn-primary col-10" title="Inbox" href="inbox.php">Inbox</a>
-        </div>
-        <div class="compose-body col-10">
-            <a class="btn btn-compose btn-primary col-10" title="Outbox" href="inbox.php">Outbox</a>
-        </div>
-        <div class="compose-body col-10">
-            <a class="btn btn-compose btn-primary col-10" title="Important" href="inbox.php">Important</a>
-        </div>
-        <div class="compose-body col-10">
-            <a class="btn btn-compose btn-primary col-10" title="Drafts" href="inbox.php">Drafts</a>
-        </div>
-        <div class="compose-body col-10">
-            <a class="btn btn-compose btn-primary col-10" title="Trash" href="inbox.php">Trash</a>
-        </div>
+
+        <ul class="other-buttons">
+            <li>
+                <a class="btn btn-compose btn-danger col-12" title="Compose" href="index.php">Compose</a>
+            </li>
+            <li>
+                <a class="btn btn-compose btn-primary col-12" title="Inbox" href="inbox.php">Inbox</a>
+            </li>
+            <li><a class="btn btn-compose btn-primary col-12" href="outbox.php" class="btn-link">Outbox</a>
+            </li>
+            <li><a class="btn btn-compose btn-primary col-12" href="#">Important</a></li>
+            <li><a class="btn btn-compose btn-primary col-12" href="#">Drafts</a></li>
+            <li><a class="btn btn-compose btn-primary col-12" href="#">Trash</a></li>
+        </ul>
     </div>
 </aside>
-<!-- End Side Bar-->
 <main class="container">
 
     <div class="align-center message-ui-frame col-12">
