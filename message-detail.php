@@ -32,18 +32,19 @@ $query->fetch();
 </header>
 <aside class="float-left col-2">
     <div class="align-center message-ui-frame col-12">
-        <div class="compose-body col-12">
-            <a class="btn btn-compose btn-danger col-12" title="Compose" href="index.php">Compose</a>
-        </div>
-        <div class="compose-body col-12">
-            <a class="btn btn-compose btn-primary col-12" title="Inbox" href="inbox.php">Inbox</a>
-        </div>
+
         <ul class="other-buttons">
-            <!--<li><a href="inbox.php" class="btn btn-primary col-sm-9">Inbox</a></li>-->
-            <li><a href="outbox.php" class="btn-link">Outbox</a></li>
-            <li><a href="#">Important</a></li>
-            <li><a href="#">Drafts</a></li>
-            <li><a href="#">Trash</a></li>
+            <li>
+                <a class="btn btn-compose btn-danger col-12" title="Compose" href="index.php">Compose</a>
+            </li>
+            <li>
+                <a class="btn btn-compose btn-primary col-12" title="Inbox" href="inbox.php">Inbox</a>
+            </li>
+            <li><a class="btn btn-compose btn-primary col-12" href="outbox.php" class="btn-link">Outbox</a>
+            </li>
+            <li><a class="btn btn-compose btn-primary col-12" href="#">Important</a></li>
+            <li><a class="btn btn-compose btn-primary col-12" href="#">Drafts</a></li>
+            <li><a class="btn btn-compose btn-primary col-12" href="#">Trash</a></li>
         </ul>
     </div>
 </aside>
