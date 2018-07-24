@@ -5,81 +5,90 @@ require_once "config.php";
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Danny's Blackmail</title>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="stylesheet/bootstrap.min.css">
-    <link rel="stylesheet" href="stylesheet/styleInboxOutbox.css">
-    <title>Danny's Blackmail</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="stylesheet/bootstrap.min.css">
+  <link rel="stylesheet" href="stylesheet/stylesheet.css">
+
 </head>
-<body>
-<main class="container col-12">
-    <div class="inbox-ui-frame col-12">
-        <aside class="left-row">
-            <div class="inbox-Logo">
-                <h5><a href ="#">Danny's BLACKMAIL</a></h5>
+  <body>
+  <div class="inbox-ui-frame col-12">
+    <aside class="left-row">
+      <div class="inbox-Logo">
+        <h5><a href ="#">Danny's <br>BLACKMAIL</a></h5>
+      </div>
+    </aside>
+  </div>
+  <div  class="container">
+  <div class="login-form">
+      <form action="controller/login.php" method="post">
+          <?php if ($_SESSION['notify'] == 'error') { ?>
+              <div class="alert alert-danger">
+                  <span><?= $_SESSION['message'] ?></span>
+              </div>
+              <?php
+          } elseif ($_SESSION['notify'] == 'success') {
+              ?>
+              <div class="alert alert-success">
+                  <span><?= $_SESSION['message'] ?></span>
+              </div>
+              <?php
+          }
+          $_SESSION['notify'] = null;
+          ?>
+          <div class="form-group">
+            <label for="inputEmail">Email</label>
+            <input type="email" class="form-control" name="email" placeholder="email@domain.com" required>
+          </div>
+          <div class="form-group">
+            <label for="inputPassword">Password</label>
+            <input type="password" class="form-control" name="password" placeholder="Password" required>
+          </div>
+
+          <button type="submit" class="btn btn-primary" name="logIn">Login</button>
+          <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#signUp">
+            Sign Up</button>
+          <div class="modal fade" id="signUp" tabindex="-1" role="dialog" aria-labelledby="signUpLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title" id="signUpLabel">Sign Up</h1>
+                </div>
+                <div class="modal-body">
+                  <form role="form" action="controller/login.php" method="post">
+                      <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" class="form-control" id="first_name" placeholder="John">
+                      </div>
+                      <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" class="form-control" id="last_name" placeholder="Doe">
+                      </div>
+                      <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="text" class="form-control" id="newEmail" placeholder="email@domain.com">
+                      </div>
+                      <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="text" class="form-control" id="pword" placeholder="Enter password">
+                      </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                  <button type="button" class="btn btn-primary">Register</button>
+                </div>
+              </div>
             </div>
-
-            <div class="compose-body col-sm-12">
-                <!-- link compose to Amin page -->
-                <a class="btn btn-compose btn-danger col-sm-12" title="Compose" href="index.php">Compose</a>
-            </div>
-            <div class= "col-sm-12">
-                <ul class="other-buttons">
-                    <li><a href="inbox.php" class="btn-link">Inbox</a></li>
-                    <li><a href="outbox.php" class="btn btn-primary col-sm-9">Outbox</a></li>
-                    <li><a href="#">Important</a></li>
-                    <li><a href="#">Drafts</a></li>
-                    <li><a href="#">Trash</a></li>
-                </ul>
-            </div>
-
-        </aside>
-
-        <aside class="right-row">
-            <div class="top-column">
-                <h3>Outbox</h3>
-            </div>
-            <div class="inbox-body">
-                <table class="table table-hover">
-                    <?php
-
-                    if ($result = $db->query("select last_name, first_name, receiver, subject, message, amount from messages join users u on messages.receiver = u.email")) {
-                        while($row=$result->fetch_assoc()){
-                            ?>
-                            <tr class="message-rows">
-
-                                <td class ="inbox-message text-left"><?php echo $row['last_name']. ', '.$row['first_name']?></td>
-                                <td class="inbox-message text-left"><?php echo $row['subject'] ?></td>
-                                <td class="inbox-message-message text-left"> <?php echo $row['message'] ?></td>
-                                <td class="inbox-message text-left">  <?php echo '$'.$row['amount']?></td>
-                                <td><a class="btn" role="button" href='message-detail.php'</a>View more</td>
-
-                            </tr>
-                            <?php
-                        }
-                    }
-                    else{
-                        echo $db->error;
-                    }
-
-                    ?>
-                </table>
-            </div>
-        </aside>
-
+          </div>
+      </form>
     </div>
-</main>
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-<script src="/js/bootstrap.bundle.js"></script>
-</body>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  </body>
 </html>
