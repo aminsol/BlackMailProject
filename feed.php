@@ -22,6 +22,7 @@ require_once "config.php";
     </aside>
   </div>
 
+  <!-- ****SIDEBAR**** -->
   <div class= "row">
     <ul class="other-buttons">
         <a href="inbox.php" class="btn-link">Inbox</a>
