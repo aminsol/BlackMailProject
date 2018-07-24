@@ -13,27 +13,27 @@ require_once "config.php";
 </head>
 
 <body>
-  <!-- <h1>Danny's Blackmail</h1>  -->
-  <div class="inbox-ui-frame col-12">
-    <aside class="left-row">
-      <div class="inbox-Logo">
-        <h5><a href ="#">Danny's <br>BLACKMAIL</a></h5>
-      </div>
-    </aside>
-  </div>
 
-  <!-- ****SIDEBAR**** -->
-  <div class= "row">
-    <ul class="other-buttons">
-        <a href="inbox.php" class="btn-link">Inbox</a>
-        <a href="outbox.php" class="btn-link"><br>Outbox</a>
-        <a href="#"><br>Important</a>
-        <a href="#"><br>Drafts</a>
-        <a href="#"><br>Trash</a>
-    </ul>
+  <aside class="float-left">
+      <div class="inbox-Logo">
+          <h5><a href ="#">Danny's <br>BLACKMAIL</a></h5>
+      </div>
+      <div class="compose-body col-sm-12">
+          <a class="btn btn-compose btn-danger col-sm-12" title="Compose" href="index.php">Compose</a>
+      </div>
+      <div class="compose-body col-sm-12">
+          <a class="btn btn-compose btn-primary col-sm-12" title="Inbox" href="inbox.php">Inbox</a>
+      </div>
+      <ul class="other-buttons">
+          <!--<li><a href="inbox.php" class="btn btn-primary col-sm-9">Inbox</a></li>-->
+          <li><a href="outbox.php" class="btn-link">Outbox</a></li>
+          <li><a href="#">Important</a></li>
+          <li><a href="#">Drafts</a></li>
+          <li><a href="#">Trash</a></li>
+      </ul>
+  </aside>
 
 <div class="container">
-
   <div class="row">
     <div class="col-md-4">
       <div class="thumbnail">
