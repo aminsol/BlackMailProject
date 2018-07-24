@@ -25,9 +25,22 @@ $query->fetch();
     <title>Message Detail Page</title>
 </head>
 <body>
+  <div class="inbox-ui-frame col-sm-2">
+   <aside class="float-left">
+     <div class="inbox-Logo">
+       <h5><a href ="#">Danny's <br>BLACKMAIL</a></h5>
+     </div>
+     <ul class="other-buttons">
+         <li><a href="outbox.php" class="btn-link">Outbox</a></li>
+         <li><a href="#">Important</a></li>
+         <li><a href="#">Drafts</a></li>
+         <li><a href="#">Trash</a></li>
+     </ul>
+   </aside>
+ </div>
+<main class="container col-8">
 
-<main class="container">
-    <div class="align-middle message-ui-frame col-12">
+    <div class="align-center message-ui-frame col-12">
         <h1 class="text-center">Please respond to your message:</h1>
             <div class="md_subject">
                 <h3><label for="email-subject">Subject:</label></h3>
