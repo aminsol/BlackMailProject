@@ -18,7 +18,6 @@ $query->fetch();
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="stylesheet/bootstrap.min.css">
-    <link rel="stylesheet" href="stylesheet/styleInboxOutbox.css">
     <link rel="stylesheet" href="stylesheet/stylesheet.css">
 
 

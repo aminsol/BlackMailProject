@@ -81,9 +81,8 @@ ul .other-buttons li a{
 }
 .top-column {
     background: none repeat scroll 0 0 ;
-
-    min-height: 80px;
-    padding: 20px;
+    min-height: 54px;
+    padding: 0;
 }
 .top-column h3{
     display: inline-block;
@@ -99,6 +98,7 @@ ul .other-buttons li a{
 
 .table tr td{
     padding: 12px;
+    vertical-align: middle;
 }
 
 .table tr .message-rows td{
