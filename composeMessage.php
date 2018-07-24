@@ -15,6 +15,8 @@ require_once "config.php";
     <title>Compose a new message!</title>
 </head>
 <body>
+<?php include "header.php"; ?>
+<?php include "sidebar.php"; ?>
 <main class="container">
     <div class="align-middle message-ui-frame col-12">
         <h1 class="text-center">Message Your Victim</h1>

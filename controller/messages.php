@@ -21,6 +21,7 @@ if (isset($_POST['createMessage'])) {
                 $_SESSION['notify'] = "success";
             } else {
                 $_SESSION['message'] = "There was a problem with creating your message in the database!";
+                $_SESSION['message'] = $query->error;
                 $_SESSION['notify'] = "error";
             }
         }

@@ -8,36 +8,18 @@ require_once "config.php";
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="stylesheet/bootstrap.min.css">
-    <link rel="stylesheet" href="stylesheet/styleInboxOutbox.css">
-
+    <link rel="stylesheet" href="stylesheet/stylesheet.css">
     <title>Danny's Blackmail</title>
 </head>
 <body>
-
-<main class="container col-12">
+<?php include "header.php"; ?>
+<?php include "sidebar.php"; ?>
+<main class="container">
     <div class="inbox-ui-frame col-12">
-        <aside class="left-row">
-            <div class="inbox-Logo">
-                <h5><a href ="inbox.php">Danny's BLACKMAIL</a></h5>
-            </div>
-
-            <div class="compose-body col-sm-12">
-                <a class="btn btn-compose btn-danger col-sm-12" title="Compose" href="composeMessage.php">Compose</a>
-            </div>
-            <div class= "col-sm-12">
-                <ul class="other-buttons">
-                    <li><a href="inbox.php" class="btn btn-primary col-sm-9">Inbox</a></li>
-                    <li><a href="outbox.php">Outbox</a></li>
-                    <li><a href="#">Important</a></li>
-                    <li><a href="#">Drafts</a></li>
-                    <li><a href="#">Trash</a></li>
-                </ul>
-            </div>
-        </aside>
         <aside class="right-row">
             <div class="top-column">
                 <h3>Inbox</h3>
@@ -46,25 +28,24 @@ require_once "config.php";
                 <table class="table table-hover">
                     <?php
 
-                    if ($result = $db->query("select last_name, first_name, sender, subject, message, amount from messages join users u on messages.sender = u.email")) {
-                        while($row=$result->fetch_assoc()){
+                    if ($result = $db->query("select id, last_name, first_name, sender, subject, message, amount from messages join users u on messages.sender = u.email")) {
+                        while ($row = $result->fetch_assoc()) {
 
                             ?>
                             <tr class="message-rows">
-
                                 <!-- who sent it-sender's name, subject, message, amount -->
-
-                                <td class ="inbox-message text-left"><?php echo $row['last_name']. ', '.$row['first_name']?></td>
+                                <td class="inbox-message text-left"><?php echo $row['last_name'] . ', ' . $row['first_name'] ?></td>
                                 <td class="inbox-message text-left"><?php echo $row['subject'] ?></td>
                                 <td class="inbox-message-message text-left"> <?php echo $row['message'] ?></td>
-                                <td class="inbox-message text-left">  <?php echo '$'.$row['amount']?></td>
-                                <td><a class="btn" role="button" href='message-detail.php'</a>View more</td>
+                                <td class="inbox-message text-left">  <?php echo '$' . $row['amount'] ?></td>
+                                <td><a class="btn btn-outline-primary" role="button"
+                                       href="message-detail.php?id=<?php echo $row['id']; ?>"</a>View more
+                                </td>
 
-                    </tr>
-                    <?php
+                            </tr>
+                            <?php
                         }
-                    }
-                    else{
+                    } else {
                         echo $db->error;
                     }
 
