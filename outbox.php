@@ -22,9 +22,9 @@ require_once "config.php";
                 <h5><a href ="#">Danny's BLACKMAIL</a></h5>
             </div>
 
-            <div class="compose-body col-9">
+            <div class="compose-body col-sm-12">
                 <!-- link compose to Amin page -->
-                <a class="btn btn-compose btn-danger" title="Compose" href="index.php">Compose</a>
+                <a class="btn btn-compose btn-danger col-sm-12" title="Compose" href="index.php">Compose</a>
             </div>
             <div class= "col-sm-12">
                 <ul class="other-buttons">
@@ -37,6 +37,7 @@ require_once "config.php";
             </div>
 
         </aside>
+
         <aside class="right-row">
             <div class="top-column">
                 <h3>Outbox</h3>
@@ -45,16 +46,17 @@ require_once "config.php";
                 <table class="table table-hover">
                     <?php
 
-                    if ($result = $db->query("select * from messages")) {
-                        while($row=$result->fetch_assoc()){?>
+                    if ($result = $db->query("select last_name, first_name, receiver, subject, message, amount from messages join users u on messages.receiver = u.email")) {
+                        while($row=$result->fetch_assoc()){
+                            ?>
                             <tr class="message-rows">
-                                <td class="checkbox">
-                                    <input type="checkbox" class="mail-mini-box" title="">
-                                </td>
-                                <td class="inbox-message text-left" ><?php echo $row['sender'] ?></td>
+
+                                <td class ="inbox-message text-left"><?php echo $row['last_name']. ', '.$row['first_name']?></td>
                                 <td class="inbox-message text-left"><?php echo $row['subject'] ?></td>
-                                <td class="inbox-message text-left"> <?php echo $row['message'] ?></td>
-                                <td class="inbox-message text-left"><?php echo $row['amount']?></td>
+                                <td class="inbox-message-message text-left"> <?php echo $row['message'] ?></td>
+                                <td class="inbox-message text-left">  <?php echo '$'.$row['amount']?></td>
+                                <td><a class="btn" role="button" href='message-detail.php'</a>View more</td>
+
                             </tr>
                             <?php
                         }
