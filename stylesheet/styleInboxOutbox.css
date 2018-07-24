@@ -51,8 +51,6 @@ ul a{
 }
 .inbox-Logo .h5 {
     display: inline-block;
-    font-size: 14px;
-    font-weight: 300;
     margin-bottom: 0;
     margin-top: 15px;
 }
@@ -66,7 +64,7 @@ ul .other-buttons{
     margin: 0;
     padding: 0;
     width: 100%;
-    border-bottom: 1px solid #d5d8df;
+
 }
 
 ul .other-buttons .li{
@@ -83,8 +81,7 @@ ul .other-buttons li a{
 }
 .top-column {
     background: none repeat scroll 0 0 ;
-    border-radius: 0 4px 0 0;
-    color: #fff;
+
     min-height: 80px;
     padding: 20px;
 }
@@ -105,7 +102,6 @@ ul .other-buttons li a{
 }
 
 .table tr .message-rows td{
-    background: none repeat scroll 0 0 #f7f7f7;
     font-weight: 600;
 }
 ul {
@@ -113,3 +109,7 @@ ul {
     padding: 0;
 }
 
+
+.inbox-message-message{
+    color: gray;
+}
