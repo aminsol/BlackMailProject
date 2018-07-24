@@ -1,5 +1,7 @@
 <?php
 require_once "config.php";
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +14,7 @@ require_once "config.php";
     <link rel="stylesheet" href="stylesheet/bootstrap.min.css">
     <link rel="stylesheet" href="stylesheet/styleInboxOutbox.css">
 
-    <title>Hello, world!</title>
+    <title>Danny's Blackmail</title>
 </head>
 <body>
 
@@ -20,11 +22,11 @@ require_once "config.php";
     <div class="inbox-ui-frame col-12">
         <aside class="left-row">
             <div class="inbox-Logo">
-                <h5><a href ="#">Danny's BLACKMAIL</a></h5>
+                <h5><a href ="inbox.php">Danny's BLACKMAIL</a></h5>
             </div>
 
             <div class="compose-body col-sm-12">
-                <a class="btn btn-compose btn-danger col-sm-12" title="Compose" href="index.php">Compose</a>
+                <a class="btn btn-compose btn-danger col-sm-12" title="Compose" href="composeMessage.php">Compose</a>
             </div>
             <div class= "col-sm-12">
                 <ul class="other-buttons">
@@ -44,16 +46,20 @@ require_once "config.php";
                 <table class="table table-hover">
                     <?php
 
-                    if ($result = $db->query("select * from messages ")) {
-                        while($row=$result->fetch_assoc()){?>
+                    if ($result = $db->query("select last_name, first_name, sender, subject, message, amount from messages join users u on messages.sender = u.email")) {
+                        while($row=$result->fetch_assoc()){
+
+                            ?>
                             <tr class="message-rows">
-                                <td class="checkbox">
-                                    <input type="checkbox" class="mail-mini-box" title="">
-                                </td>
-                                <td class="inbox-message text-left" ><?php echo $row['sender'] ?></td>
+
+                                <!-- who sent it-sender's name, subject, message, amount -->
+
+                                <td class ="inbox-message text-left"><?php echo $row['last_name']. ', '.$row['first_name']?></td>
                                 <td class="inbox-message text-left"><?php echo $row['subject'] ?></td>
-                                <td class="inbox-message text-left"> <?php echo $row['message'] ?></td>
-                                <td class="inbox-message text-left">  <?php echo $row['amount']?></td>
+                                <td class="inbox-message-message text-left"> <?php echo $row['message'] ?></td>
+                                <td class="inbox-message text-left">  <?php echo '$'.$row['amount']?></td>
+                                <td><a class="btn" role="button" href='message-detail.php'</a>View more</td>
+
                     </tr>
                     <?php
                         }
