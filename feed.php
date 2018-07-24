@@ -26,10 +26,10 @@ require_once "config.php";
       </div>
       <ul class="other-buttons">
           <!--<li><a href="inbox.php" class="btn btn-primary col-sm-9">Inbox</a></li>-->
-          <li><a href="outbox.php" class="btn-link">Outbox</a></li>
-          <li><a href="#">Important</a></li>
-          <li><a href="#">Drafts</a></li>
-          <li><a href="#">Trash</a></li>
+          <a href="outbox.php" class="btn-link">Outbox</a>
+          <a href="#"><br>Important</a>
+          <a href="#"><br>Drafts</a>
+          <a href="#"><br>Trash</a>
       </ul>
   </aside>
 
@@ -47,8 +47,8 @@ require_once "config.php";
     </div>
     <div class="col-md-4">
         <div class="thumbnail">
-          <a href="uploadFiles/img1.jpg" target="_blank">
-            <img src="img1.jpg" style="width:100%">
+          <a href="uploadFiles/img2.jpg" target="_blank">
+            <img src="img2.jpg" style="width:100%">
               <div class="caption">
                 <p class="text-black-50">Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
               </div>
@@ -57,8 +57,8 @@ require_once "config.php";
       </div>
       <div class="col-md-4">
         <div class="thumbnail">
-          <a href="uploadFiles/img1.jpg" target="_blank">
-            <img src="img1.jpg" style="width:100%">
+          <a href="uploadFiles/img3.jpg" target="_blank">
+            <img src="img3.jpg" style="width:100%">
               <div class="caption">
                 <p class="text-black-50">Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
               </div>
@@ -67,8 +67,8 @@ require_once "config.php";
       </div>
       <div class="col-md-4">
         <div class="thumbnail">
-          <a href="uploadFiles/img1.jpg" target="_blank">
-            <img src="img1.jpg" style="width:100%">
+          <a href="uploadFiles/img4.jpg" target="_blank">
+            <img src="img4.jpg" style="width:100%">
               <div class="caption">
                 <p class="text-black-50">Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
               </div>
@@ -77,8 +77,8 @@ require_once "config.php";
       </div>
       <div class="col-md-4">
         <div class="thumbnail">
-          <a href="uploadFiles/img1.jpg" target="_blank">
-            <img src="img1.jpg" style="width:100%">
+          <a href="uploadFiles/img5.jpg" target="_blank">
+            <img src="img5.jpg" style="width:100%">
               <div class="caption">
                 <p class="text-black-50">Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
               </div>
@@ -87,8 +87,8 @@ require_once "config.php";
       </div>
     <div class="col-md-4">
       <div class="thumbnail">
-        <a href="img2" target="_blank">
-          <img src="uploadFiles/img2.jpg" style="width:100%">
+        <a href="uploadFiles/img6" target="_blank">
+          <img src="uploadFiles/img6.jpg" style="width:100%">
           <div class="caption">
             <p class="text-black-50">Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
           </div>
@@ -97,8 +97,8 @@ require_once "config.php";
     </div>
     <div class="col-md-4">
       <div class="thumbnail">
-        <a href="uploadFiles/img3.jpg" target="_blank">
-          <img src="img3.jpg" style="width:100%">
+        <a href="uploadFiles/img7.jpg" target="_blank">
+          <img src="img7.jpg" style="width:100%">
           <div class="caption">
             <p class="text-black-50">Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
           </div>
