@@ -11,6 +11,10 @@ main{
     height: 100%;
 }
 
+header{
+    margin-bottom: 20px;
+}
+
 
 form textarea{
     min-height: 250px;
@@ -67,5 +71,9 @@ form textarea{
 }
 
 .other-buttons li{
-    margin-top: 20px;
+    margin: 10px 20px;
+}
+
+.inbox-Logo{
+    padding-left: 34px;
 }

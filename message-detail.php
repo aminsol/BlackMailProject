@@ -36,6 +36,7 @@ $query->fetch();
         <ul class="other-buttons">
             <li>
                 <a class="btn btn-compose btn-danger col-12" title="Compose" href="index.php">Compose</a>
+                <hr/>
             </li>
             <li>
                 <a class="btn btn-compose btn-primary col-12" title="Inbox" href="inbox.php">Inbox</a>
