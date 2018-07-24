@@ -46,6 +46,7 @@ require_once "config.php";
             <div class="inbox-body">
                 <table class="table table-hover">
                     <?php
+
                     if ($result = $db->query("select id, last_name, first_name, receiver, subject, message, amount from messages join users u on messages.receiver = u.email")) {
                         while($row=$result->fetch_assoc()){
                             ?>
