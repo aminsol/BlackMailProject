@@ -3,7 +3,7 @@ html{
 }
 body{
 
-    background-image: url("/images/mainbg.jpg");
+    background-image: url("../images/mainbg.jpg");
     height: 100%;
 }
 main{
@@ -45,7 +45,7 @@ form textarea{
   justify-content: center;
   position: relative;
   text-align: center;
-  width: 50;
+  width: 1200px;
 }
 
 .md_message{

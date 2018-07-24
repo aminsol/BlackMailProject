@@ -8,11 +8,13 @@ require_once "config.php";
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="stylesheet/bootstrap.min.css">
     <link rel="stylesheet" href="stylesheet/styleInboxOutbox.css">
+
+
 
     <title>Danny's Blackmail</title>
 </head>
@@ -46,22 +48,20 @@ require_once "config.php";
                 <table class="table table-hover">
                     <?php
 
-                    if ($result = $db->query("select last_name, first_name, sender, subject, message, amount from messages join users u on messages.sender = u.email")) {
+                    if ($result = $db->query("select id, last_name, first_name, sender, subject, message, amount from messages join users u on messages.sender = u.email")) {
                         while($row=$result->fetch_assoc()){
 
                             ?>
                             <tr class="message-rows">
-
                                 <!-- who sent it-sender's name, subject, message, amount -->
-
                                 <td class ="inbox-message text-left"><?php echo $row['last_name']. ', '.$row['first_name']?></td>
                                 <td class="inbox-message text-left"><?php echo $row['subject'] ?></td>
                                 <td class="inbox-message-message text-left"> <?php echo $row['message'] ?></td>
                                 <td class="inbox-message text-left">  <?php echo '$'.$row['amount']?></td>
-                                <td><a class="btn" role="button" href='message-detail.php'</a>View more</td>
+                                <td><a class="btn" role="button" href="message-detail.php?id=<?php echo $row['id']; ?>"</a>View more</td>
 
-                    </tr>
-                    <?php
+                            </tr>
+                            <?php
                         }
                     }
                     else{

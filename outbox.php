@@ -12,6 +12,7 @@ require_once "config.php";
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="stylesheet/bootstrap.min.css">
     <link rel="stylesheet" href="stylesheet/styleInboxOutbox.css">
+    <link rel="stylesheet" href="stylesheet/stylesheet.css">
     <title>Danny's Blackmail</title>
 </head>
 <body>
@@ -24,7 +25,7 @@ require_once "config.php";
 
             <div class="compose-body col-sm-12">
                 <!-- link compose to Amin page -->
-                <a class="btn btn-compose btn-danger col-sm-12" title="Compose" href="index.php">Compose</a>
+                <a class="btn btn-compose btn-danger col-sm-12" title="Compose" href="composeMessage.php">Compose</a>
             </div>
             <div class= "col-sm-12">
                 <ul class="other-buttons">
@@ -46,7 +47,7 @@ require_once "config.php";
                 <table class="table table-hover">
                     <?php
 
-                    if ($result = $db->query("select last_name, first_name, receiver, subject, message, amount from messages join users u on messages.receiver = u.email")) {
+                    if ($result = $db->query("select id, last_name, first_name, receiver, subject, message, amount from messages join users u on messages.receiver = u.email")) {
                         while($row=$result->fetch_assoc()){
                             ?>
                             <tr class="message-rows">
@@ -55,7 +56,7 @@ require_once "config.php";
                                 <td class="inbox-message text-left"><?php echo $row['subject'] ?></td>
                                 <td class="inbox-message-message text-left"> <?php echo $row['message'] ?></td>
                                 <td class="inbox-message text-left">  <?php echo '$'.$row['amount']?></td>
-                                <td><a class="btn" role="button" href='message-detail.php'</a>View more</td>
+                                <td><a class="btn" role="button" href="message-detail.php?id=<?php echo $row['id']; ?>"</a>View more</td>
 
                             </tr>
                             <?php
