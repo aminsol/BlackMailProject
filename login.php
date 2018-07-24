@@ -15,7 +15,13 @@ require_once "config.php";
 
 </head>
   <body>
-    <h1>Danny's Blackmail</h1>
+  <div class="inbox-ui-frame col-12">
+    <aside class="left-row">
+      <div class="inbox-Logo">
+        <h5><a href ="#">Danny's <br>BLACKMAIL</a></h5>
+      </div>
+    </aside>
+  </div>
   <div  class="container">
   <div class="login-form">
       <form action="controller/login.php" method="post">
