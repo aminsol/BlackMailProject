@@ -68,7 +68,7 @@ require_once "config.php";
                 <label for="email-attachment">
                     <span class="btn btn-success">Upload Your Image</span>
                 </label>
-                <input id="email-attachment" name="attachment" type="file" class="d-none">
+                <input id="email-attachment" name="attachment" type="file" class="d-none" required>
             </div>
             <div class="form-group">
                 <label for="email-body">Your innocent message:</label>
