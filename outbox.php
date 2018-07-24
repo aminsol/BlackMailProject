@@ -38,7 +38,6 @@ require_once "config.php";
                             <td><a class="btn btn-outline-primary" role="button"
                                    href="message-detail.php?id=<?php echo $row['id']; ?>"</a>View more
                             </td>
-
                         </tr>
                         <?php
                     }
