@@ -11,30 +11,8 @@ require_once "config.php";
     <link rel="stylesheet" href="stylesheet/stylesheet.css">
 </head>
 <body>
-<header class="navbar navbar-default">
-    <div class="inbox-Logo align-center">
-        <h5><a href="#">Danny's <br>BLACKMAIL</a></h5>
-    </div>
-</header>
-<aside class="float-left col-2">
-    <div class="align-center message-ui-frame col-12">
-
-        <ul class="other-buttons">
-            <li>
-                <a class="btn btn-compose btn-danger col-12" title="Compose" href="index.php">Compose</a>
-                <hr/>
-            </li>
-            <li>
-                <a class="btn btn-compose btn-primary col-12" title="Inbox" href="inbox.php">Inbox</a>
-            </li>
-            <li><a class="btn btn-compose btn-primary col-12" href="outbox.php" class="btn-link">Outbox</a>
-            </li>
-            <li><a class="btn btn-compose btn-primary col-12" href="#">Important</a></li>
-            <li><a class="btn btn-compose btn-primary col-12" href="#">Drafts</a></li>
-            <li><a class="btn btn-compose btn-primary col-12" href="#">Trash</a></li>
-        </ul>
-    </div>
-</aside>
+<?php include "header.php"; ?>
+<?php include "sidebar.php"; ?>
 <main class="container">
     <div class="row">
         <div class="col-md-4">

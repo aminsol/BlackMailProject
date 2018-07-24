@@ -14,11 +14,8 @@ require_once "config.php";
 
 </head>
 <body>
-<header class="navbar navbar-default">
-    <div class="inbox-Logo align-center">
-        <h5><a href="#">Danny's <br>BLACKMAIL</a></h5>
-    </div>
-</header>
+<body>
+<?php include "header.php"; ?>
 <div class="container">
     <div class="login-form">
         <form action="controller/login.php" method="post">
