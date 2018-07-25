@@ -15,13 +15,13 @@ if($query->fetch()) {
   $_SESSION['login'] = 1;
   $_SESSION['user'] = $username;
 
-  header('Location: ../feed.php');
+  header('Location: ../index.php');
   exit;
 }
 else {
   $_SESSION['message'] = "email does not exist";
   $_SESSION['notify'] = "error";
 
-  header('Location: ../index.php');
+  header('Location: ../login.php');
   exit;
 }

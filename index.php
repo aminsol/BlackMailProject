@@ -17,7 +17,7 @@ require_once "config.php";
   <?php include "header.php"; ?>
   <?php include "sidebar.php"; ?>
 
-<div class="container">
+<main class="container">
   <div class="row">
     <div class="col-md-4">
       <div class="thumbnail">
@@ -61,7 +61,7 @@ require_once "config.php";
       </div>
 
   </div>
-</div>
+</main>
 
 </body>
 </html>
