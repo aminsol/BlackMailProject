@@ -22,6 +22,6 @@ else {
   $_SESSION['message'] = "email does not exist";
   $_SESSION['notify'] = "error";
 
-  header('Location: ../login.php');
+  header('Location: ../index.php');
   exit;
 }
